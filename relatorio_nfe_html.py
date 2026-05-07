@@ -385,12 +385,19 @@ def _html_itens(aItens: list) -> str:
                 <th>Qtd</th>
                 <th>V. Unit.</th>
                 <th>V. Prod.</th>
+                <th>V. Frete</th>
+                <th>V. Desc.</th>
+                <th>ICMS - CST</th>
                 <th>ICMS %</th>
                 <th>ICMS R$</th>
+                <th>PIS - CST</th>
                 <th>PIS %</th>
                 <th>PIS R$</th>
+                <th>COFINS - CST</th>
                 <th>COFINS %</th>
                 <th>COFINS R$</th>
+                <th>IPI - CST</th>
+                <th>IPI %</th>
                 <th>IPI R$</th>
             </tr>
         </thead>
@@ -411,12 +418,19 @@ def _html_itens(aItens: list) -> str:
                 <td class='right'>{oIt['qtd']}</td>
                 <td class='right'>{_moeda(oIt['vUnit'])}</td>
                 <td class='right'>{_moeda(oIt['vProd'])}</td>
+                <td class='right'>{_moeda(oIt['vFrete'])}</td>
+                <td class='right'>{_moeda(oIt['vDesc'])}</td>
+                <td class='center'>{oImp['icms']['cst']}</td>
                 <td class='right'>{_pct(oImp['icms']['aliq'])}</td>
                 <td class='right'>{_moeda(oImp['icms']['valor'])}</td>
+                <td class='center'>{oImp['pis']['cst']}</td>
                 <td class='right'>{_pct(oImp['pis']['aliq'])}</td>
                 <td class='right'>{_moeda(oImp['pis']['valor'])}</td>
+                <td class='center'>{oImp['cofins']['cst']}</td>
                 <td class='right'>{_pct(oImp['cofins']['aliq'])}</td>
                 <td class='right'>{_moeda(oImp['cofins']['valor'])}</td>
+                <td class='center'>{oImp['ipi']['cst']}</td>
+                <td class='right'>{_pct(oImp['ipi']['aliq'])}</td>
                 <td class='right'>{_moeda(oImp['ipi']['valor'])}</td>
             </tr>
         """)
